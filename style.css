@@ -1869,4 +1869,799 @@ IMPRESSION
         background: white;
         color: black;
     }
-}
+}<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    >
+
+    <meta name="theme-color" content="#050807">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <meta
+        name="description"
+        content="AYAH — Une touche. Un verset. Un rappel."
+    >
+
+    <title>AYAH — Une touche. Un verset.</title>
+
+    <!-- Polices -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Inter:wght@300;400;500;600;700&family=Marcellus&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+<!-- =========================================
+     BACKGROUND DÉCORATIF
+========================================== -->
+
+<div class="background" aria-hidden="true">
+
+    <div class="gradient-orb orb-one"></div>
+    <div class="gradient-orb orb-two"></div>
+
+    <div class="stars">
+        <span>✦</span>
+        <span>·</span>
+        <span>✧</span>
+        <span>·</span>
+        <span>✦</span>
+        <span>·</span>
+        <span>✧</span>
+        <span>·</span>
+        <span>✦</span>
+    </div>
+
+    <div class="islamic-pattern"></div>
+
+</div>
+
+
+<!-- =========================================
+     APPLICATION
+========================================== -->
+
+<main id="app">
+
+    <!-- =====================================
+         TOPBAR
+    ====================================== -->
+
+    <header class="topbar">
+
+        <button
+            class="icon-button"
+            id="menuButton"
+            aria-label="Ouvrir le menu"
+            type="button"
+        >
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+
+        <div class="brand">
+
+            <div class="brand-symbol">✦</div>
+
+            <div class="brand-text">
+                <span class="brand-name">AYAH</span>
+                <span class="brand-subtitle">UN RAPPEL</span>
+            </div>
+
+        </div>
+
+
+        <button
+            class="icon-button"
+            id="themeButton"
+            aria-label="Changer le thème"
+            type="button"
+        >
+            ☾
+        </button>
+
+    </header>
+
+
+    <!-- =====================================
+         ÉCRAN VERSET
+    ====================================== -->
+
+    <section
+        class="ayah-screen"
+        id="ayahScreen"
+        aria-label="Verset du Coran"
+    >
+
+        <!-- Label -->
+        <div class="daily-label">
+
+            <span class="label-line"></span>
+
+            <span id="dailyLabel">UN RAPPEL POUR VOUS</span>
+
+            <span class="label-line"></span>
+
+        </div>
+
+
+        <!-- Bismillah -->
+        <div
+            class="bismillah"
+            id="bismillah"
+            dir="rtl"
+        >
+            بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ
+        </div>
+
+
+        <!-- ================================
+             CARTE DU VERSET
+        ================================= -->
+
+        <article
+            class="ayah-card"
+            id="ayahCard"
+        >
+
+            <div class="card-glow"></div>
+
+            <div class="corner corner-top-left"></div>
+            <div class="corner corner-top-right"></div>
+            <div class="corner corner-bottom-left"></div>
+            <div class="corner corner-bottom-right"></div>
+
+
+            <!-- Numéro -->
+            <div class="ayah-number-container">
+
+                <div class="ayah-number-ring">
+
+                    <span
+                        id="ayahNumber"
+                        class="ayah-number"
+                    >
+                        1
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- Texte arabe -->
+            <div
+                class="arabic-container"
+                dir="rtl"
+            >
+
+                <p
+                    id="arabicText"
+                    class="arabic-text"
+                >
+                    إِنَّ مَعَ الْعُسْرِ يُسْرًا
+                </p>
+
+            </div>
+
+
+            <!-- Ornement -->
+            <div class="ornament">
+                <span></span>
+                <i>✦</i>
+                <span></span>
+            </div>
+
+
+            <!-- Traduction -->
+            <div class="translation-container">
+
+                <p
+                    id="translationText"
+                    class="translation-text"
+                >
+                    Certes, avec la difficulté vient certes la facilité.
+                </p>
+
+            </div>
+
+
+            <!-- ⭐ RAPPEL / CONSEIL -->
+            <div
+                id="reminderBox"
+                class="reminder-box"
+            ></div>
+
+
+            <!-- Référence -->
+            <div class="reference">
+
+                <span
+                    id="surahName"
+                    class="surah-name"
+                >
+                    ASH-SHARH
+                </span>
+
+                <span class="reference-dot">•</span>
+
+                <span id="referenceNumber">
+                    94 : 6
+                </span>
+
+            </div>
+
+        </article>
+
+
+        <!-- ================================
+             ACTIONS
+        ================================= -->
+
+        <div class="actions">
+
+            <button
+                class="action-button"
+                id="favoriteButton"
+                type="button"
+                aria-label="Ajouter aux favoris"
+            >
+                <span class="action-icon">♡</span>
+                <span class="action-label">Favori</span>
+            </button>
+
+
+            <button
+                class="action-button primary-action"
+                id="audioButton"
+                type="button"
+                aria-label="Écouter le verset"
+            >
+                <span class="action-icon">▶</span>
+                <span class="action-label">Écouter</span>
+            </button>
+
+
+            <button
+                class="action-button"
+                id="shareButton"
+                type="button"
+                aria-label="Partager le verset"
+            >
+                <span class="action-icon">↗</span>
+                <span class="action-label">Partager</span>
+            </button>
+
+        </div>
+
+
+        <!-- ================================
+             PROGRESSION
+        ================================= -->
+
+        <div class="progress-area">
+
+            <div class="progress-info">
+
+                <span>VERSETS DÉCOUVERTS</span>
+
+                <strong>
+                    <span id="discoveredCount">1</span>
+                    /
+                    <span id="totalCount">6236</span>
+                </strong>
+
+            </div>
+
+
+            <div class="progress-track">
+
+                <div
+                    class="progress-bar"
+                    id="progressBar"
+                    style="width: 0.01%;"
+                ></div>
+
+            </div>
+
+        </div>
+
+
+        <!-- ================================
+             BOUTON PRINCIPAL
+        ================================= -->
+
+        <button
+            class="discover-button"
+            id="discoverButton"
+            type="button"
+        >
+
+            <span class="discover-icon">✦</span>
+            <span class="discover-text">DÉCOUVRIR UN VERSET</span>
+            <span class="discover-arrow">→</span>
+
+        </button>
+
+
+        <p class="touch-hint">
+            Touchez n'importe où pour continuer
+        </p>
+
+    </section>
+
+
+    <!-- =====================================
+         NAVIGATION BASSE
+    ====================================== -->
+
+    <footer class="bottom-navigation">
+
+        <button
+            class="nav-item active"
+            data-page="home"
+            type="button"
+        >
+            <span class="nav-icon">✦</span>
+            <span class="nav-label">Découvrir</span>
+        </button>
+
+
+        <button
+            class="nav-item"
+            data-page="favorites"
+            type="button"
+        >
+            <span class="nav-icon">♡</span>
+            <span class="nav-label">Favoris</span>
+        </button>
+
+
+        <button
+            class="nav-item"
+            data-page="progress"
+            type="button"
+        >
+            <span class="nav-icon">◌</span>
+            <span class="nav-label">Progression</span>
+        </button>
+
+
+        <button
+            class="nav-item"
+            data-page="settings"
+            type="button"
+        >
+            <span class="nav-icon">⚙</span>
+            <span class="nav-label">Réglages</span>
+        </button>
+
+    </footer>
+
+</main>
+
+
+<!-- =========================================
+     MENU LATÉRAL
+========================================== -->
+
+<div
+    class="menu-overlay"
+    id="menuOverlay"
+    aria-hidden="true"
+></div>
+
+
+<aside
+    class="side-menu"
+    id="sideMenu"
+    aria-label="Menu principal"
+>
+
+    <div class="menu-header">
+
+        <div>
+            <span class="menu-brand">AYAH</span>
+            <span class="menu-tagline">Une touche. Un verset.</span>
+        </div>
+
+        <button
+            class="close-menu"
+            id="closeMenu"
+            type="button"
+            aria-label="Fermer"
+        >
+            ×
+        </button>
+
+    </div>
+
+
+    <div class="menu-content">
+
+        <button
+            class="menu-option"
+            data-menu="home"
+            type="button"
+        >
+            <span>✦</span>
+            <div>
+                <strong>Découvrir</strong>
+                <small>Nouveaux versets</small>
+            </div>
+        </button>
+
+
+        <button
+            class="menu-option"
+            data-menu="favorites"
+            type="button"
+        >
+            <span>♡</span>
+            <div>
+                <strong>Mes favoris</strong>
+                <small>Versets sauvegardés</small>
+            </div>
+        </button>
+
+
+        <button
+            class="menu-option"
+            data-menu="progress"
+            type="button"
+        >
+            <span>◌</span>
+            <div>
+                <strong>Ma progression</strong>
+                <small>Votre parcours</small>
+            </div>
+        </button>
+
+
+        <div class="menu-separator"></div>
+
+
+        <button
+            class="menu-option"
+            data-menu="language"
+            type="button"
+        >
+            <span>文</span>
+            <div>
+                <strong>Langue</strong>
+                <small>Français</small>
+            </div>
+        </button>
+
+
+        <button
+            class="menu-option"
+            data-menu="settings"
+            type="button"
+        >
+            <span>⚙</span>
+            <div>
+                <strong>Paramètres</strong>
+                <small>Personnaliser AYAH</small>
+            </div>
+        </button>
+
+    </div>
+
+
+    <div class="menu-footer">
+
+        <div class="menu-motto">
+            <span>✦</span>
+            <p>
+                « Et rappelez-vous, car le rappel profite aux croyants. »
+            </p>
+        </div>
+
+        <small>AYAH • Version 1.0</small>
+
+    </div>
+
+</aside>
+
+
+<!-- =========================================
+     MODAL FAVORIS
+========================================== -->
+
+<div
+    class="modal"
+    id="favoritesModal"
+    aria-hidden="true"
+>
+
+    <div class="modal-box">
+
+        <button
+            class="modal-close"
+            data-close-modal
+            type="button"
+        >
+            ×
+        </button>
+
+        <div class="modal-symbol">♡</div>
+
+        <h2>Mes favoris</h2>
+
+        <p id="favoritesEmpty">
+            Vos versets favoris apparaîtront ici.
+        </p>
+
+        <div
+            id="favoritesList"
+            class="favorites-list"
+        ></div>
+
+    </div>
+
+</div>
+
+
+<!-- =========================================
+     MODAL PROGRESSION
+========================================== -->
+
+<div
+    class="modal"
+    id="progressModal"
+    aria-hidden="true"
+>
+
+    <div class="modal-box progress-modal">
+
+        <button
+            class="modal-close"
+            data-close-modal
+            type="button"
+        >
+            ×
+        </button>
+
+        <div class="modal-symbol">◌</div>
+
+        <h2>Votre progression</h2>
+
+        <div class="big-progress-number">
+
+            <span id="modalDiscovered">1</span>
+            <small>/ 6236</small>
+
+        </div>
+
+        <div class="modal-progress-track">
+
+            <div
+                id="modalProgressBar"
+                class="modal-progress-bar"
+            ></div>
+
+        </div>
+
+        <p>
+            Continuez votre découverte, un verset à la fois.
+        </p>
+
+    </div>
+
+</div>
+
+
+<!-- =========================================
+     ⚙️ MODAL PARAMÈTRES
+========================================== -->
+
+<div
+    class="modal"
+    id="settingsModal"
+    aria-hidden="true"
+>
+
+    <div class="modal-box settings-modal">
+
+        <button
+            class="modal-close"
+            data-close-modal
+            type="button"
+        >
+            ×
+        </button>
+
+        <div class="modal-symbol">⚙</div>
+
+        <h2>Paramètres</h2>
+
+        <p>Personnalisez votre expérience</p>
+
+
+        <!-- Récitateur -->
+        <div class="setting-section">
+
+            <div class="setting-label">
+                <span>🎧</span>
+                <span>Récitateur</span>
+            </div>
+
+            <div
+                class="setting-options"
+                id="reciterOptions"
+            ></div>
+
+        </div>
+
+
+        <!-- Thème -->
+        <div class="setting-section">
+
+            <div class="setting-label">
+                <span>🌙</span>
+                <span>Thème</span>
+            </div>
+
+            <div
+                class="setting-options"
+                id="themeOptions"
+            >
+
+                <button class="setting-option" data-theme-choice="dark" type="button">
+                    <span class="option-icon">☾</span>
+                    <span class="option-label">Sombre</span>
+                </button>
+
+                <button class="setting-option" data-theme-choice="light" type="button">
+                    <span class="option-icon">☀</span>
+                    <span class="option-label">Clair</span>
+                </button>
+
+                <button class="setting-option" data-theme-choice="auto" type="button">
+                    <span class="option-icon">◐</span>
+                    <span class="option-label">Auto</span>
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- Taille texte -->
+        <div class="setting-section">
+
+            <div class="setting-label">
+                <span>🔤</span>
+                <span>Taille du texte</span>
+            </div>
+
+            <div
+                class="setting-options"
+                id="fontOptions"
+            >
+
+                <button class="setting-option" data-font="small" type="button">
+                    <span class="option-icon">A</span>
+                    <span class="option-label">Petit</span>
+                </button>
+
+                <button class="setting-option" data-font="medium" type="button">
+                    <span class="option-icon" style="font-size:1.1rem;">A</span>
+                    <span class="option-label">Moyen</span>
+                </button>
+
+                <button class="setting-option" data-font="large" type="button">
+                    <span class="option-icon" style="font-size:1.3rem;">A</span>
+                    <span class="option-label">Grand</span>
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- Options -->
+        <div class="setting-section">
+
+            <div class="setting-label">
+                <span>✨</span>
+                <span>Options</span>
+            </div>
+
+            <div class="setting-toggles">
+
+                <label class="setting-toggle">
+                    <span class="toggle-text">
+                        🔁 Lecture auto du verset suivant
+                    </span>
+                    <input type="checkbox" id="autoPlayToggle">
+                    <span class="toggle-switch"></span>
+                </label>
+
+                <label class="setting-toggle">
+                    <span class="toggle-text">
+                        📳 Vibrer au toucher
+                    </span>
+                    <input type="checkbox" id="vibrateToggle">
+                    <span class="toggle-switch"></span>
+                </label>
+
+            </div>
+
+        </div>
+
+
+        <!-- Danger -->
+        <div class="setting-section setting-danger">
+
+            <button
+                class="danger-button"
+                id="resetButton"
+                type="button"
+            >
+                🗑️ Réinitialiser la progression
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =========================================
+     TOAST
+========================================== -->
+
+<div
+    class="toast"
+    id="toast"
+    role="status"
+    aria-live="polite"
+>
+    <span id="toastIcon">✦</span>
+    <span id="toastMessage">Nouveau verset</span>
+</div>
+
+
+<!-- =========================================
+     AUDIO
+========================================== -->
+
+<audio
+    id="ayahAudio"
+    preload="none"
+></audio>
+
+
+<!-- =========================================
+     JAVASCRIPT
+========================================== -->
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
